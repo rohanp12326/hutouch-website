@@ -1,0 +1,228 @@
+/* Updated CTA Container */
+.hero-container {
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+  padding: 4rem 0; /* You can adjust or remove padding if needed */
+  width: 100%;
+  min-height: 100vh; /* Ensures full viewport height */
+}
+
+/* Centering the Main Content Using Absolute Positioning */
+.cta-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1; /* Ensure it stays above the gradient divs */
+}
+
+/* Background Gradient Effects */
+.gradient-bg {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 122, 255, 0.8) 0%,
+    rgba(0, 0, 255, 0) 75%
+  );
+  filter: blur(90px);
+  z-index: -1; /* Keeps the gradient behind the content */
+}
+
+.gradient-left {
+  left: 10%;
+  top: 25%;
+}
+
+.gradient-right {
+  right: 10%;
+  bottom: 25%;
+}
+
+/* Headings */
+.hero-title {
+  font-size: 3.5rem;
+  color: #111;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap; /* Prevents the text from wrapping to a new line */
+}
+
+.hero-subtitle {
+  font-size: 3.5rem;
+  color: #111;
+  margin: 0;
+  text-align: center;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 70px; /* Spacing between subtitle and button */
+}
+
+@media (min-width: 600px) {
+  .button-group {
+    flex-direction: row;
+    gap: 30px;
+  }
+}
+
+/* Primary & Secondary Buttons */
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 16px 32px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Button Hover Effect */
+.primary-button:hover,
+.secondary-button:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, #3A9DE0 0%, #7B8FE5 100%);
+  transform: translateY(-2px);
+}
+
+/* Primary Button */
+.primary-button {
+  background: linear-gradient(90deg, #4BC0FB 0%, #95A1F7 100%);
+  color: white;
+  border: none;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Secondary Button */
+.secondary-button {
+  background: transparent;
+  border: 3px solid #4BC0FB;
+  color: #4BC0FB;
+}
+
+.secondary-button:hover {
+  background: #4BC0FB;
+  color: white;
+}
+
+/* Responsive Adjustments */
+
+/* For screens 1024px and below */
+@media (max-width: 1024px) {
+  .hero-container {
+    padding: 3rem 0;
+  }
+
+  .gradient-bg {
+    width: 350px;
+    height: 350px;
+    filter: blur(80px);
+  }
+
+  .hero-title,
+  .hero-subtitle {
+    font-size: 3rem;
+  }
+}
+
+/* For screens 768px and below */
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 2.5rem 0;
+  }
+
+  .gradient-bg {
+    width: 300px;
+    height: 300px;
+    filter: blur(70px);
+  }
+
+  .gradient-left {
+    left: 5%;
+    top: 20%;
+  }
+
+  .gradient-right {
+    right: 5%;
+    bottom: 20%;
+  }
+
+  .hero-title,
+  .hero-subtitle {
+    font-size: 2.5rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    font-size: 1.1rem;
+    padding: 14px 28px;
+  }
+}
+
+/* For screens 600px and below */
+@media (max-width: 600px) {
+  .hero-container {
+    padding: 2rem 0;
+  }
+
+  .gradient-bg {
+    width: 250px;
+    height: 250px;
+    filter: blur(60px);
+  }
+
+  .gradient-left {
+    left: 5%;
+    top: 15%;
+  }
+
+  .gradient-right {
+    right: 5%;
+    bottom: 15%;
+  }
+
+  .hero-title,
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
+/* For screens 400px and below */
+@media (max-width: 400px) {
+  .hero-title,
+  .hero-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .button-group {
+    margin-top: 50px;
+  }
+}

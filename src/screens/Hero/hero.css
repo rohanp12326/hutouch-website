@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Hero Section - Expanded Horizontally */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Header (HuTouch Logo on Left + Button on Right) */
+.hero__header {
+  display: flex;
+  justify-content: space-between; /* Ensures internal content alignment */
+  align-items: center;
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto 0 auto;  /* Centers header horizontally and adds bottom margin */
+  box-sizing: border-box;
+}
+
+/* Logo Styling */
+.hero__logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center;
+  font-family: 'Russo One', sans-serif;
+}
+
+.hero__logo span {
+  color: black;
+}
+
+/* Updated Action Button Styling */
+.hero__action-button {
+  background: transparent;
+  border: 2px solid black;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adds spacing between text and arrow */
+}
+
+.hero__action-button:hover {
+  background: black;
+  color: white;
+}
+
+/* Content Wrapper with Gradient Background */
+.hero__content-wrapper {
+  background: url('../../assets/images/background_image.png') no-repeat center center;
+  
+  padding: 15px 40px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+  width: 95%;
+  text-align: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Title & Text */
+.hero__title {
+  font-size: 3rem;
+  color: black;
+  font-family: 'Inter', sans-serif; /* Apply Inter font */
+}
+
+.hero__subtitle {
+  font-size: 1.3rem;
+  color: #333;
+  margin-top: 0.5rem;
+  font-family: 'Inter', sans-serif; /* Apply Inter font */
+}
+
+/* Image in Place of {H} */
+.hero__image {
+  width: 120px;
+  height: auto;
+}
+
+/* Signup Form: Container with transparent background and no forced width */
+.hero__signup-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;  /* Remove white background */
+  padding: 0;
+  border: none;
+  width: auto;
+  box-shadow: none;
+  margin: 1rem auto;
+}
+
+/* Signup Button: Set to auto width so it doesn’t expand */
+.hero__signup-button {
+  width: auto;  /* Use intrinsic width */
+  padding: 16px 30px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+.hero__beta-text{
+  font-weight: bold;
+  font-family: 'Inter', sans-serif; /* Apply Inter font */
+}
+.hero__signup-button:hover {
+  background: #333;
+}
+
+/* Responsive Adjustments */
+
+/* For screens 1024px and below */
+@media (max-width: 1024px) {
+  .hero__header {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .hero__content-wrapper {
+    width: 90%;
+  }
+
+  /* Let the signup form and button adjust naturally */
+  .hero__signup-form {
+    max-width: none;
+  }
+
+  .hero__signup-button {
+    width: auto;
+  }
+
+  .hero__title {
+    font-size: 2.8rem;
+  }
+}
+
+/* For screens 768px and below */
+@media (max-width: 768px) {
+  .hero__signup-form {
+    flex-direction: row;
+    width: fit-content;
+  }
+  
+  .hero__signup-button {
+    width: auto;
+  }
+  
+  .hero__title {
+    font-size: 2.5rem;
+  }
+}
+
+/* For screens 600px and below */
+@media (max-width: 600px) {
+  .hero {
+    padding: 1rem;
+  }
+  
+  .hero__header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .hero__logo {
+    font-size: 1.5rem;
+  }
+  
+  .hero__action-button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+  
+  .hero__content-wrapper {
+    padding: 20px 10px;
+  }
+  
+  .hero__title {
+    font-size: 2rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero__image {
+    width: 100px;
+  }
+  
+  .hero__signup-form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .hero__signup-button {
+    width: auto;
+    border-radius: 30px;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* For screens 400px and below */
+@media (max-width: 400px) {
+  .hero__logo {
+    font-size: 1.3rem;
+  }
+  
+  .hero__action-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .hero__title {
+    font-size: 1.8rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+  
+  .hero__image {
+    width: 80px;
+  }
+  
+  .hero__signup-button {
+    padding: 10px;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* General Layout */
+.section.double-capabilities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 4%;
+  box-sizing: border-box;
+  background-color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Page Title */
+.page-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: black;
+  text-align: left;
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Two-Column Layout */
+.capability-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  gap: 12rem; /* Adjust this value for desired spacing */
+  margin-bottom: 2rem;
+}
+
+/* Adjust for Alternating Layouts */
+.more-can-be-done {
+  flex-direction: row-reverse;
+}
+
+.tailored-to-specs {
+  flex-direction: row;
+}
+
+/* Text Blocks */
+.capability-block {
+  flex: 1;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  text-align: left; /* Ensures left alignment */
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+.capability-block h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: black;
+  font-weight: bold;
+  text-align: left; /* Ensures left alignment */
+  font-family: 'Inter', sans-serif;
+}
+
+/* Paragraph */
+.capability-block p {
+  font-size: 0.9rem;
+  color: black;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  text-align: left; /* Ensures left alignment */
+  font-family: 'Inter', sans-serif;
+}
+
+/* Bullet Points */
+.capability-block ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  margin: 0;
+  text-align: left; /* Ensures left alignment */
+  font-family: 'Inter', sans-serif;
+}
+
+/* Image Wrapper */
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.5;
+  max-width: 300px;
+}
+
+/* Image Sizing */
+.capability-image {
+  width: 100%;
+  max-width: 260px;
+  object-fit: contain;
+}
+
+/* Image Positioning */
+.more-can-be-done .image-wrapper {
+  justify-content: flex-end;
+}
+
+.tailored-to-specs .image-wrapper {
+  justify-content: flex-start;
+}
+
+/* Responsive Adjustments for screens 1024px and below */
+@media (max-width: 1024px) {
+  .capability-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .capability-block {
+    max-width: 85%;
+    text-align: left; /* Maintains left alignment in mobile */
+  }
+
+  .capability-block h3,
+  .capability-block p,
+  .capability-block ul {
+    text-align: left; /* Ensures text is left-aligned on mobile */
+  }
+
+  .image-wrapper {
+    max-width: 250px;
+    margin-bottom: 0.8rem;
+  }
+
+  .capability-image {
+    width: 85%;
+    max-width: 220px;
+  }
+}
+
+/* For screens 600px and below */
+@media (max-width: 600px) {
+  .section.double-capabilities {
+    padding: 1rem 4%;
+  }
+  
+  .page-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .capability-container {
+    gap: 1rem;
+  }
+  
+  .capability-block {
+    max-width: 100%;
+    padding: 0.5rem 0;
+  }
+  
+  .capability-block h3 {
+    font-size: 1rem;
+  }
+  
+  .capability-block p,
+  .capability-block ul {
+    font-size: 0.85rem;
+  }
+  
+  .image-wrapper {
+    max-width: 220px;
+    margin-bottom: 1rem;
+  }
+  
+  .capability-image {
+    max-width: 200px;
+  }
+}
+
+/* For screens 400px and below */
+@media (max-width: 400px) {
+  .page-title {
+    font-size: 1.3rem;
+    padding: 0 1rem;
+  }
+  
+  .capability-block h3 {
+    font-size: 0.95rem;
+  }
+  
+  .capability-block p,
+  .capability-block ul {
+    font-size: 0.8rem;
+  }
+  
+  .image-wrapper {
+    max-width: 180px;
+  }
+  
+  .capability-image {
+    max-width: 160px;
+  }
+}

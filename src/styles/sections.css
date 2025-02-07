@@ -1,0 +1,25 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent default scrolling */
+    font-family: "Inter", sans-serif;
+}
+
+/* Keep .section minimal to avoid global collisions */
+.section {
+    width: 100%;
+    height: 100vh;
+    /* Possibly only keep the flex layout if needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Remove or move these out of the global .section */
+  /* font-size: 2rem;
+     text-align: center;
+     color: black; 
+  */
+  
+
+/* Remove the hardcoded section background colors */
