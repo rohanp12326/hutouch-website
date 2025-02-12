@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import "./vision.css";
+import ReactGA from "react-ga4"; // Import ReactGA
 
 const imageData = [
   {
@@ -27,6 +28,13 @@ const Vision = () => {
 
   const handlePrev = () => {
     if (isAnimating) return;
+
+    ReactGA.event({
+      category: "Vision",
+      action: "Arrow Prev Click",
+      label: "Vision: Previous Arrow",
+    });
+
     setIsAnimating(true);
 
     // Slide the current image out to the RIGHT.
@@ -53,6 +61,12 @@ const Vision = () => {
 
   const handleNext = () => {
     if (isAnimating) return;
+
+    ReactGA.event({
+      category: "Vision",
+      action: "Arrow Next Click",
+      label: "Vision: Next Arrow",
+    });
     setIsAnimating(true);
 
     // Slide the current image out to the LEFT.
@@ -78,7 +92,16 @@ const Vision = () => {
   };
 
   const handleExploreClick = () => {
-    window.open("https://github.com/Niiti/HuTouch-AI-Demo/tree/main/recipely", "_blank");
+    ReactGA.event({
+      category: "Vision",
+      action: "Explore Button Click",
+      label: "Explore on Vision Section",
+    });
+
+    window.open(
+      "https://github.com/Niiti/HuTouch-AI-Demo/tree/main/recipely",
+      "_blank"
+    );
   };
 
   return (
@@ -151,7 +174,10 @@ const Vision = () => {
               🕒 Total Time Taken: {imageData[currentIndex].time_taken} | ✅
               Unit Testing Pass Rate: {imageData[currentIndex].pass_rate}
             </p>
-            <button className="huTouchInAction__button" onClick={handleExploreClick}>
+            <button
+              className="huTouchInAction__button"
+              onClick={handleExploreClick}
+            >
               Explore
             </button>
           </div>

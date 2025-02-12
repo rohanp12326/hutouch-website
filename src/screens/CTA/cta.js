@@ -1,8 +1,15 @@
 import React from "react";
 import "./cta.css"; // Import the CSS file
+import ReactGA from "react-ga4";  // Import ReactGA
 
 const CTA = () => {
   const handleClick = () => {
+    ReactGA.event({
+      category: "CTA",
+      action: "Get Private Beta Access Click",
+      label: "CTA Button"
+    });
+    
     // Open the HubSpot form in a new tab
     window.open("https://share.hsforms.com/1zMNWuJJnQYWjq_SWLnUptweb6am", "_blank");
   };

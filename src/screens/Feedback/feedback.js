@@ -3,6 +3,7 @@ import "./feedback.css";
 import discord from "../../assets/images/discord_icon.png"; // Correct Import Path
 import mail from "../../assets/images/gmail.png";
 import avatarImg from "../../assets/images/feedback-user.jpg"; // Asset image for testimonial avatars
+import ReactGA from "react-ga4"; // Import ReactGA
 
 const testimonials = [
   {
@@ -45,6 +46,24 @@ const TestimonialCard = ({ name, company, text, avatar }) => {
 };
 
 const Feedback = () => {
+  // Event handler for mail button clicks
+  const handleMailClick = () => {
+    ReactGA.event({
+      category: "Feedback",
+      action: "Mail Button Click",
+      label: "Feedback - Queries Button",
+    });
+  };
+
+  // Event handler for Discord button clicks
+  const handleDiscordClick = () => {
+    ReactGA.event({
+      category: "Feedback",
+      action: "Discord Button Click",
+      label: "Feedback - Discord Button",
+    });
+  };
+
   return (
     <section className="section testimonials-section">
       <h2 className="testimonials-title">What Developers are Saying</h2>
@@ -61,16 +80,18 @@ const Feedback = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="mail-button"
+          onClick={handleMailClick}
         >
           Queries? Reach us at
           <img src={mail} alt="Mail Icon" />
         </a>
 
         <a
-          href="https://discord.com"
+          href="https://discord.gg/vQjEuMuf"
           target="_blank"
           rel="noopener noreferrer"
           className="discord-button"
+          onClick={handleDiscordClick}
         >
           <img src={discord} alt="Discord Icon" />
           Follow us on Discord

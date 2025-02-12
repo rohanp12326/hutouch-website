@@ -1,15 +1,28 @@
 import React from "react";
 import "./hero.css";
 import heroImage from "../../assets/images/hutouch_logo.png"; // Ensure this image exists in your assets
+import ReactGA from "react-ga4"; // Import ReactGA
 
 const Hero = ({ fullpageApi }) => {
   // When the button is clicked, move down to the next section (Vision)
   const handleActionClick = () => {
+    ReactGA.event({
+      category: "Hero",
+      action: "See HuTouch in Action Click",
+      label: "HuTouch Action Button"
+    });
+
     if (fullpageApi) {
       fullpageApi.moveSectionDown();
     }
   };
   const handleSignUpClick = () => {
+    ReactGA.event({
+      category: "Hero",
+      action: "Sign Up Click",
+      label: "Signup Button"
+    });
+    
     // Open the HubSpot form in a new tab
     window.open("https://share.hsforms.com/1zMNWuJJnQYWjq_SWLnUptweb6am", "_blank");
   };
